@@ -13,7 +13,7 @@ function Hello() {
 /* takes the size of the array as argument. returns random number 
 * between 0 and size -1 */
 function randomNumber(size) { 
-    return Math.floor(Math.random() * (size - 1));
+    return Math.floor(Math.random() * size);
 } 
 
 function onImageClick(winnerID, loserID) {
