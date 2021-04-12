@@ -32,7 +32,13 @@ function switchImage(id1, id2) {
     }
     y = y_temp    
 
-    document.getElementById("id1").src = images[x];
-    document.getElementById("id2").src = images[y];
+    if (document.getElementById("id1").src != images[x]){
+        document.getElementById("id1").src = images[x];
+    }
+    if (document.getElementById("id2").src != images[y]){
+        document.getElementById("id2").src = images[y];
+    }
+    //document.getElementById("id1").src = images[x];
+    //document.getElementById("id2").src = images[y];
     // loop through directory? while not id1 or id2...
 }
