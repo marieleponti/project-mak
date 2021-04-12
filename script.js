@@ -26,19 +26,14 @@ function onImageClick(winnerID, loserID) {
 // params so we know which image not to choose
 function switchImage(id1, id2) {
     x = randomNumber(size)
-    y_temp = randomNumber(size)
-    while (y_temp == x){
-        y_temp = randomNumber(size);
+    while (document.getElementById("id1").src == images[x]){
+        x = randomNumber(size);
     }
-    y = y_temp    
-
-    if (document.getElementById("id1").src != images[x]){
-        document.getElementById("id1").src = images[x];
-    }
-    if (document.getElementById("id2").src != images[y]){
-        document.getElementById("id2").src = images[y];
-    }
-    //document.getElementById("id1").src = images[x];
-    //document.getElementById("id2").src = images[y];
+    y = randomNumber(size)
+    while (y == x || document.getElementById("id2").src == images[y]){
+        y = randomNumber(size);
+    } 
+    document.getElementById("id1").src = images[x];
+    document.getElementById("id2").src = images[y];
     // loop through directory? while not id1 or id2...
 }
