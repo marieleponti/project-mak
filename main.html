@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-
    <head>
       <title>Project MAK</title>
-      <script src = "script.js" type = "text/javascript"></script>
+      <link href="styles.css" rel="stylesheet">
    </head>
-	
    <body>
        <h1>Event Planner</h1>
        <hr />
@@ -13,18 +11,17 @@
        <tr>
           <td>
               <!--TODO: programmatically change the image here instead of hardcoding a url and caption-->
-              <img id="id1" src="https://via.placeholder.com/150" onclick ="onImageClick('id1', 'id2');" alt="text">
-              <figcaption>Image 1</figcaption>
+              <button id="start" onclick ="onImageClick('id1', 'id2');">Start</button> 
             </td>
           <td>
-              <img id="id2" src="https://via.placeholder.com/150" onclick ="onImageClick('id2', 'id1');" alt="text">
+              <img id="id2" onclick ="onImageClick('id2', 'id1');" alt="text">
               <figcaption>Image 2</figcaption>
             </td>
             <td>
-              <img id="randomImage" src=getRandomImage onclick="onImageClick('id2', 'id1');" alt="text">
+              <img id="id1" src=getRandomImage onclick="onImageClick('id2', 'id1');" alt="text">
             </td>
         </tr>
        </table>
+       <script src = "script.js" type = "text/javascript"></script>
    </body>
-	
 </html>
