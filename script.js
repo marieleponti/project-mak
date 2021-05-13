@@ -1,49 +1,60 @@
-size = 4;
-var images = [];
-images[0] = "http://images.clipartpanda.com/square-clipart-square_solid_red5.png";
-images[1] = "http://images.clipartpanda.com/square-clipart-jixEz4nET.png";
-images[2] = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Yellow_triangle.svg/878px-Yellow_triangle.svg.png";
-images[3] = "https://tse3.mm.bing.net/th?id=OIP.zanvgWxqEKLjTiyxEWOC9wHaHa&pid=Api";
-
-x = randomNumber(), y = randomNumber();
-function Hello() {
-   alert("Hello, World");
-}
-
-/* takes the size of the array as argument. returns random number 
-* between 0 and size -1 */
-function randomNumber() { 
-    return Math.floor(Math.random() * size);
-} 
-
-function onImageClick(winnerID, loserID) {
-    alert("One point for: " + winnerID);
-    // record point, access db?
-    // switch images
-    switchImage(winnerID, loserID);
-}
-
-// params so we know which image not to choose
-function switchImage(id1, id2) {
-    x = randomNumber()
-    while (document.getElementById("id1").src == images[x]){
-        x = randomNumber();
-    }
-    y = randomNumber()
-    while (y == x || document.getElementById("id2").src == images[y]){
-        y = randomNumber();
-    } 
-    document.getElementById("id1").src = images[x];
-    document.getElementById("id2").src = images[y];
-    // loop through directory? while not id1 or id2...
-}
+"using strict"
+// abstraction of image DB
+const imagesArr =["charmander.png", "pikachu.png", "raichu.png", "nidoran.png",
+"charmeleon.png", "flareon.png", "jigglypuff.png", "nidorina.png", "wigglytuff.png"];
+const importImagesSources = ["http://images.clipartpanda.com/square-clipart-square_solid_red5.png", 
+"http://images.clipartpanda.com/square-clipart-jixEz4nET.png",
+"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Yellow_triangle.svg/878px-Yellow_triangle.svg.png",
+"https://tse3.mm.bing.net/th?id=OIP.zanvgWxqEKLjTiyxEWOC9wHaHa&pid=Api"];
 
 function getRandomImage(){
-    var image = images[randomNumber()];
-    return image;
+    //console.log("getRandomImage()")
+    randomNum = Math.floor(Math.random() * imagesArr.length);
+    // this will return an image
+    return imagesArr[randomNum];
 }
 
-function displayRandomImage(){
-    var htmlImage = document.getElementById("randomImage");
-    htmlImage.src=getRandomImage;
+function getRandomImportedImageSource(){
+    //console.log("getRandomImage()")
+    //this will return image source
+    randomNum = Math.floor(Math.random() * importImagesSources.length);
+    return importImagesSources[randomNum];
+}
+
+//event listener for when page loads
+document.addEventListener("DOMContentLoaded", () => {
+    //add event listener to button
+    document.getElementById("startBtn").addEventListener("click", startGame);
+});
+
+function startGame(){
+    //console.log("startGame()")
+    document.getElementById("startBtn").disabled = true;
+    const myImage1 = document.getElementById("pic1");
+    const myImage2 = document.getElementById("pic2");
+    myImage1.src='picsMAK/' + getRandomImage();
+    myImage2.src='picsMAK/' + getRandomImage();
+    myImage1.addEventListener("click", swapImages);
+    myImage2.addEventListener("click", swapImages);
+
+    //imported images
+    const myImage3 = document.getElementById("pic3");
+    const myImage4 = document.getElementById("pic4");
+    myImage3.src=getRandomImportedImageSource();
+    myImage4.src=getRandomImportedImageSource();
+    myImage3.addEventListener("click", swapImages);
+    myImage4.addEventListener("click", swapImages);
+}
+
+function swapImages(event){
+    const myImage1 = document.getElementById("pic1");
+    const myImage2 = document.getElementById("pic2");
+    myImage1.src='picsMAK/' + getRandomImage();
+    myImage2.src='picsMAK/' + getRandomImage();
+
+    //imported images
+    const myImage3 = document.getElementById("pic3");
+    const myImage4 = document.getElementById("pic4");
+    myImage3.src=getRandomImportedImageSource();
+    myImage4.src=getRandomImportedImageSource();
 }

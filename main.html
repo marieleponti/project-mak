@@ -1,27 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-   <head>
-      <title>Project MAK</title>
-      <link href="styles.css" rel="stylesheet">
-   </head>
-   <body>
-       <h1>Event Planner</h1>
-       <hr />
-      <table border = "0">
-       <tr>
-          <td>
-              <!--TODO: programmatically change the image here instead of hardcoding a url and caption-->
-              <button id="start" onclick ="onImageClick('id1', 'id2');">Start</button> 
-            </td>
-          <td>
-              <img id="id2" onclick ="onImageClick('id2', 'id1');" alt="text">
-              <figcaption>Image 2</figcaption>
-            </td>
-            <td>
-              <img id="id1" src=getRandomImage onclick="onImageClick('id2', 'id1');" alt="text">
-            </td>
-        </tr>
-       </table>
-       <script src = "script.js" type = "text/javascript"></script>
-   </body>
+  <head>
+    <title>ProjectMAK</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Event Planner</h1>
+    <div id="main">
+      <div class="row">
+        <!-- do we want this to be a paragraph? -->
+        <p>Choose your favorite picture!
+          <button id="startBtn">Start</button>
+        </p>       
+      </div>
+      <div>
+        <div class="row">
+          <img id="pic1" height="150px" width="150px"> 
+          <img id="pic2" height="150px" width="150px">
+        </div>
+        <div class="row">
+          <img id="pic3" height="150px" width="150px"> 
+          <img id="pic4" height="150px" width="150px">
+        </div>
+        </div>
+      </div> 
+    </div>
+      <script src = "script.js" type = "text/javascript"></script>
+  </body>
 </html>
