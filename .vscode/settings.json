@@ -3,7 +3,7 @@
 
         "configurations": [],
         "compounds": []
-    }
+    },
 
     "editor.tokenColorCustomizations": {
         "comments": "#33a189"
