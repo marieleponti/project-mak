@@ -8,7 +8,7 @@
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Open main.html",
-            "file": "c:\\Users\\lumaf\\OneDrive\\Documents\\codingProjects\\project-mak\\main.html"
+            "file": "c:\\Users\\lumaf\\OneDrive\\Documents\\codingProjects\\project-mak\\index.html"
         }
     ]
 }

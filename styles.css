@@ -3,3 +3,30 @@ body {
     font-family: cursive;
     font-size: 1.1em;
 }
+
+h1{
+    display:inline;
+    margin: 20px;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    border: 1px solid black;
+}
+
+button{
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(84, 144, 235);
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline;
+}
