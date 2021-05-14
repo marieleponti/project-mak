@@ -1,7 +1,7 @@
 "using strict"
 // abstraction of image DB
-const imagesLocal =["charmander.png", "pikachu.png", "raichu.png", "nidoran.png",
-"charmeleon.png", "flareon.png", "jigglypuff.png", "nidorina.png", "wigglytuff.png"];
+// const imagesLocal =["charmander.png", "pikachu.png", "raichu.png", "nidoran.png",
+// "charmeleon.png", "flareon.png", "jigglypuff.png", "nidorina.png", "wigglytuff.png"];
 const imageSources = ["http://images.clipartpanda.com/square-clipart-square_solid_red5.png", 
 "http://images.clipartpanda.com/square-clipart-jixEz4nET.png",
 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Yellow_triangle.svg/878px-Yellow_triangle.svg.png",
@@ -36,25 +36,25 @@ function getRandomImageSources(imageCount){
 *is to be used for non-local image sources and returns **image sources**,
 *this function returns the .png of images stored on local device. 
 */
-function getRandomImagesLocal(imageCount){
-    let map = new Map();
-    let images = []
-    for (let i = 0; i < imageCount; i++){
-        randomNum = Math.floor(Math.random() * imagesLocal.length);
-        if (!map.has(randomNum)){
-            images[i] = imagesLocal[randomNum];
-            map.set(randomNum, i);
-        } else {
-            //if randomNum is key in map, its image source already been used
-            while(map.has(randomNum)){
-                randomNum = Math.floor(Math.random() * imagesLocal.length);
-            }
-            images[i] = imagesLocal[randomNum];
-            map.set(randomNum, i);
-        }
-    }
-    return images;
-}
+// function getRandomImagesLocal(imageCount){
+//     let map = new Map();
+//     let images = []
+//     for (let i = 0; i < imageCount; i++){
+//         randomNum = Math.floor(Math.random() * imagesLocal.length);
+//         if (!map.has(randomNum)){
+//             images[i] = imagesLocal[randomNum];
+//             map.set(randomNum, i);
+//         } else {
+//             //if randomNum is key in map, its image source already been used
+//             while(map.has(randomNum)){
+//                 randomNum = Math.floor(Math.random() * imagesLocal.length);
+//             }
+//             images[i] = imagesLocal[randomNum];
+//             map.set(randomNum, i);
+//         }
+//     }
+//     return images;
+// }
 
 //event listener for when page loads
 document.addEventListener("DOMContentLoaded", () => {
@@ -75,13 +75,13 @@ function startGame(){
     myImage2.addEventListener("click", swapImages);
 
     //local images
-    const myImage3 = document.getElementById("pic3");
-    const myImage4 = document.getElementById("pic4");
-    arrRandomLocal = getRandomImagesLocal(2);
-    myImage3.src='picsMAK/' + arrRandomLocal[0];
-    myImage4.src='picsMAK/' + arrRandomLocal[1];
-    myImage3.addEventListener("click", swapImages);
-    myImage4.addEventListener("click", swapImages);
+    // const myImage3 = document.getElementById("pic3");
+    // const myImage4 = document.getElementById("pic4");
+    // arrRandomLocal = getRandomImagesLocal(2);
+    // myImage3.src='picsMAK/' + arrRandomLocal[0];
+    // myImage4.src='picsMAK/' + arrRandomLocal[1];
+    // myImage3.addEventListener("click", swapImages);
+    // myImage4.addEventListener("click", swapImages);
 }
 
 function swapImages(event){
@@ -93,9 +93,9 @@ function swapImages(event){
     myImage2.src=arrRandom[1];
 
     //local images
-    const myImage3 = document.getElementById("pic3");
-    const myImage4 = document.getElementById("pic4");
-    arrRandomLocal = getRandomImagesLocal(2);
-    myImage3.src='picsMAK/' + arrRandomLocal[0];
-    myImage4.src='picsMAK/' + arrRandomLocal[1];
+    // const myImage3 = document.getElementById("pic3");
+    // const myImage4 = document.getElementById("pic4");
+    // arrRandomLocal = getRandomImagesLocal(2);
+    // myImage3.src='picsMAK/' + arrRandomLocal[0];
+    // myImage4.src='picsMAK/' + arrRandomLocal[1];
 }
